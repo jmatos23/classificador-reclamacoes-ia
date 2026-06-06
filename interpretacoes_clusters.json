@@ -1,0 +1,74 @@
+{
+  "0": {
+    "nome_cluster": "Cobranças Indevidas e Atendimento Deficiente",
+    "temas": [
+      "Cobranças indevidas e taxas não transparentes",
+      "Atendimento ao cliente ineficaz e falha na resolução",
+      "Busca por intervenção do Banco Central"
+    ],
+    "risco": "Alto"
+  },
+  "1": {
+    "nome_cluster": "Fraudes, Cobranças e Barreira Digital",
+    "temas": [
+      "Cobranças e empréstimos indevidos/fraudulentos",
+      "Ineficácia e inacessibilidade do atendimento bancário",
+      "Vulnerabilidade a golpes e dificuldades com tecnologia"
+    ],
+    "risco": "Alto"
+  },
+  "2": {
+    "nome_cluster": "Problemas com Produtos e Canais Digitais",
+    "temas": [
+      "Problemas com Cartão de Crédito",
+      "Usabilidade e Mudanças no Aplicativo",
+      "Falhas Operacionais e Resolução de Problemas"
+    ],
+    "risco": "Alto"
+  },
+  "3": {
+    "nome_cluster": "Cobrança Indevida Cartão de Crédito",
+    "temas": [
+      "Cobranças indevidas/não reconhecidas em fatura de cartão de crédito",
+      "Urgência e demanda por resolução imediata",
+      "Insatisfação com o atendimento e ameaças de escalonamento"
+    ],
+    "risco": "Alto"
+  },
+  "4": {
+    "nome_cluster": "Cobrança Indevida/Não Reconhecida em Empréstimos",
+    "temas": [
+      "Cobranças indevidas ou não reconhecidas em empréstimos",
+      "Ameaça de acionamento de órgãos reguladores e ações legais (Procon, BC, Judicial)",
+      "Demanda por resolução imediata e estorno"
+    ],
+    "risco": "Alto"
+  },
+  "5": {
+    "nome_cluster": "Insegurança Financeira e Ineficácia na Resolução",
+    "temas": [
+      "Fraudes e Movimentações Financeiras Não Autorizadas",
+      "Incompetência na Resolução de Problemas e Atendimento",
+      "Falhas de Segurança e Sistêmicas"
+    ],
+    "risco": "Alto"
+  },
+  "6": {
+    "nome_cluster": "Fraudes por Falha de Segurança (Conta e Cartão)",
+    "temas": [
+      "Fraude e Falha de Segurança do Banco",
+      "Negligência e Responsabilidade da Instituição Financeira",
+      "Ineficácia no Atendimento e Resolução de Problemas Pós-Fraude"
+    ],
+    "risco": "Alto"
+  },
+  "7": {
+    "nome_cluster": "Cobranças e Débitos Indevidos",
+    "temas": [
+      "Cobranças e débitos sem justificativa ou vínculo contratual",
+      "Falha na resolução e inércia do atendimento",
+      "Ameaças de ações legais e danos à reputação"
+    ],
+    "risco": "Alto"
+  }
+}

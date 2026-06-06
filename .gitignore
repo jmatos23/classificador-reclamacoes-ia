@@ -1,0 +1,36 @@
+--- SEGURANÇA E CHAVES ---
+
+Ignora o arquivo que contém a sua chave privada do Gemini
+
+.env
+
+--- AMBIENTES VIRTUAIS ---
+
+Ignora a pasta da sua bolha virtual (que contém gigabytes de bibliotecas instaladas localmente)
+
+venv/
+.venv/
+env/
+ENV/
+bin/
+lib/
+share/
+
+--- CACHES DO PYTHON ---
+
+Ignora arquivos de compilação automática do Python
+
+pycache/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+--- ANOTAÇÕES E DOCUMENTOS PESSOAIS ---
+
+Ignora arquivos locais de rascunhos e anotações para não subir para o GitHub
+
+anotações.txt
+anotações.txt
+anotações.md
+anotações.md
