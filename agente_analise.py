@@ -127,7 +127,7 @@ def analisar_reclamacao_completa(texto_reclamacao):
 # =====================================================================
 if __name__ == "__main__":
     print("\n" + "="*50)
-    print("🤖 TESTANDO O AGENTE FINQUARD INTEGRADO 🤖")
+    print("🤖 TESTANDO O AGENTE RECGUARD INTEGRADO 🤖")
     print("="*50)
     
     # Exemplo de reclamação totalmente inédita de Fraude de Pix

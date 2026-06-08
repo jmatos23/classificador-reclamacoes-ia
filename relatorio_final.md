@@ -26,7 +26,7 @@
     \vspace{-1.5cm}
     \textbf{\huge Relatório Executivo e Análise Crítica}\\
     \vspace{0.3cm}
-    \large Pipeline Híbrido de Inteligência Artificial para Triagem de Reclamações (FinGuard)
+    \large Pipeline Híbrido de Inteligência Artificial para Triagem de Reclamações (RecGuard)
 }
 \author{\textbf{Autor:} João Paulo Matos \\ \textit{Área: Inteligência de Dados e Gestão de Riscos Operacionais}}
 \date{Junho de 2026}
@@ -43,7 +43,7 @@
 
 \section{Sumário Executivo}
 
-Este documento apresenta a análise técnica e estratégica do novo sistema de triagem automatizada desenvolvido para a \textbf{FinGuard}. Perante um volume diário insustentável de manifestações de clientes em múltiplos canais (SAC, Ouvidoria, BACEN e Redes Sociais), implementámos um ecossistema inteligente que funde \textbf{Machine Learning Não-Supervisionado (Clustering Clássico)} com \textbf{Inteligência Artificial Cognitiva (Large Language Models)}.
+Este documento apresenta a análise técnica e estratégica do novo sistema de triagem automatizada desenvolvido para a \textbf{RedGuard}. Perante um volume diário insustentável de manifestações de clientes em múltiplos canais (SAC, Ouvidoria, BACEN e Redes Sociais), implementámos um ecossistema inteligente que funde \textbf{Machine Learning Não-Supervisionado (Clustering Clássico)} com \textbf{Inteligência Artificial Cognitiva (Large Language Models)}.
 
 \subsection*{Principais Conquistas do Projeto:}
 \begin{enumerate}

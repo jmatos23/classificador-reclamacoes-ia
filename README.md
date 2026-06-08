@@ -1,6 +1,6 @@
-# FinGuard: Classificador Híbrido de Reclamações com IA
+# RecGuard: Classificador Híbrido de Reclamações com IA
 
-O **FinGuard** é um sistema inteligente baseado em uma arquitetura híbrida que combina o poder analítico de **Machine Learning Não-Supervisionado** (rodando localmente com custo zero) com a capacidade cognitiva e contextual de **Grandes Modelos de Linguagem (LLMs)** via API do Gemini. 
+O **RecGuard** é um sistema inteligente baseado em uma arquitetura híbrida que combina o poder analítico de **Machine Learning Não-Supervisionado** (rodando localmente com custo zero) com a capacidade cognitiva e contextual de **Grandes Modelos de Linguagem (LLMs)** via API do Gemini. 
 
 O objetivo principal é identificar padrões ocultos e agrupamentos temáticos em reclamações de clientes bancários, categorizando-as automaticamente e gerando relatórios de risco estruturados em tempo real.
 
@@ -14,7 +14,7 @@ Esta é a organização dos arquivos e artefatos gerados ao longo da execução 
     ├── .env                  --> Suas chaves protegidas (GEMINI_API_KEY)
     ├── .gitignore            --> Evita subir o .env, venv/ e rascunhos locais
     ├── anotações.txt         --> Seus insights e logs de execução do modelo
-    ├── desafio-externo.pdf   --> O escopo original do desafio FinGuard
+    ├── desafio-externo.pdf   --> O escopo original do desafio RecGuard
     │
     ├── generate_dataset.py   --> Geração paralela (15 workers) de 500 reclamações com Gemini 2.5
     ├── reclamacoes_sinteticas.csv --> O dataset bruto gerado pela IA
@@ -64,7 +64,7 @@ O sistema opera em três fases distintas que se conectam por meio de arquivos e 
       [ SALVAMENTO DE ARTEFATOS ] ───────> Cria: [kmeans_model.pkl], [pca_model.pkl], [interpretacoes_clusters.json]
     
     ========================================================================================
-    FASE 3: INFERÊNCIA DO AGENTE HÍBRIDO "FINGUARD" (agente_analise.py)
+    FASE 3: INFERÊNCIA DO AGENTE HÍBRIDO "RecGUARD" (agente_analise.py)
     ========================================================================================
     
       [ Nova Reclamação Inédita (Texto) ]
@@ -157,4 +157,28 @@ Para evitar falhas de leitura ou arquivos ausentes, os scripts devem ser executa
 | :---: | :--- | :--- | :--- |
 | **01** | `python generate_dataset.py` | Dispara chamadas de rede em paralelo via *threads* para criar a base inicial fictícia. | `reclamacoes_sinteticas.csv` *(500 registros estruturados)* |
 | **02** | `python pipeline_ml.py` | Roda a vetorização sem custo, reduz o espaço vetorial e salva os pesos matemáticos. | `kmeans_model.pkl`<br>`pca_model.pkl`<br>`interpretacoes_clusters.json`<br>`grafico_elbow_method.png` |
-| **03** | `python agente_analise.py` | Executa o teste ponta a ponta do agente, aplicando a classificação híbrida (ML + LLM). | **Relatório Consolidado FinGuard** exibido em formato JSON no terminal. |
+| **03** | `python agente_analise.py` | Executa o teste ponta a ponta do agente, aplicando a classificação híbrida (ML + LLM). | **Relatório Consolidado RecGuard** exibido em formato JSON no terminal. |
+
+## 6. Proximos passos:
+
+1. Guardrails de Input (Entrada)
+
+    Prompt Injection e LGPD: Bloqueia comandos maliciosos que tentam manipular o sistema e mascara dados sensíveis para evitar o vazamento de informações pessoais.
+
+    Validação de Escopo (Off-topic): Descarta textos fora do contexto financeiro (como receitas culinárias) para evitar processamento inútil e gasto desnecessário de tokens.
+
+2. Guardrails de Output (Saída)
+
+    Validação Estrita de Formato: Remove frases conversacionais (ex: "Aqui está sua análise") e garante que a saída seja exclusivamente um JSON válido.
+
+    Prevenção de Alucinações: Restringe as respostas aos parâmetros do arquivo interpretacoes_clusters.json. Categorias ou clusters inventados pela IA são descartados.
+
+    Moderação de Tom e Risco Legal: Filtra linguagem inflamatória, xingamentos ou acusações (ex: "O cliente está mentindo"), mitigando riscos jurídicos corporativos.
+
+    Bloqueio de Vazamento (Prompt Leaking): Intercepta e corta a resposta caso a IA tente revelar suas instruções secretas de funcionamento (System Prompt), protegendo a propriedade intelectual do projeto.
+
+2. Evolução para Arquitetura Multimodal e Multiagentes
+
+    Suporte Multimodal (Integração Speech-to-Text): Atualmente, o pipeline de ingestão processa exclusivamente demandas em formato de texto. Para abranger a diversidade de canais de atendimento, o próximo passo inclui a implementação de um roteador de formatos na entrada do sistema. Caso a reclamação recebida seja um arquivo de áudio, ela será desviada para uma fila de processamento dedicada que realizará a transcrição via Speech-to-Text. Após a conversão, o texto gerado retornará ao fluxo normal de classificação, expandindo as capacidades de atendimento da ferramenta.
+
+    Especialização via Multiagentes: A versão atual foi desenvolvida utilizando um único agente cognitivo responsável por todo o escopo de análise. Planejamos refatorar a solução para uma arquitetura multiagentes, visando reduzir custos de inferência e fornecer contextos mais isolados e precisos para o LLM. O processamento será segmentado entre agentes especialistas — por exemplo, um agente dedicado exclusivamente à detecção de risco, outro à sumarização de contexto, um terceiro para categorização e outro para identificação de prejuízos financeiros —, garantindo maior eficiência e assertividade na execução de cada tarefa individual.
